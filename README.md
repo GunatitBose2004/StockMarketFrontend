@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Stock Market Trading Platform - Frontend
 
 Beautiful React frontend for the Stock Market Trading Platform matching the MRU Trading Platform design.
@@ -67,7 +66,3 @@ The frontend connects to these backend endpoints:
 - GET `/api/portfolio/user/{userId}` - Get user portfolio
 
 Enjoy trading! 🚀
-=======
-# StockMarketAPP
-A full stack project using springboot and java principles . Using React as frontend and springboot as backend and swagger UI as the intermediate and database used is MySQl 
->>>>>>> 13d835672525f072c208f50b46b1c0c90225db61
