@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1e88e5" />
+    <meta
+      name="description"
+      content="MRU Trading Platform - Full-Stack Stock Market Trading Application"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>MRU Trading Platform - Stock Market</title>
+    
+    <!-- Preconnect to API -->
+    <link rel="preconnect" href="http://localhost:8080" />
+    
+    <style>
+      /* Loading Screen */
+      #root-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #1e88e5 0%, #1565c0 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+      
+      #root-loader.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .loader-logo {
+        font-size: 80px;
+        margin-bottom: 20px;
+        animation: bounce 1s infinite;
+      }
+      
+      .loader-title {
+        color: white;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      
+      .loader-subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 16px;
+        margin-bottom: 30px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      
+      .loader-spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(255, 255, 255, 0.3);
+        border-top: 5px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this application.</noscript>
+    
+    <!-- Loading Screen -->
+    <div id="root-loader">
+      <div class="loader-logo">📈</div>
+      <div class="loader-title">MRU Trading Platform</div>
+      <div class="loader-subtitle">Loading your trading experience...</div>
+      <div class="loader-spinner"></div>
+    </div>
+    
+    <!-- React Root -->
+    <div id="root"></div>
+    
+    <script>
+      // Hide loader when React app loads
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const loader = document.getElementById('root-loader');
+          if (loader) {
+            loader.classList.add('hide');
+            setTimeout(function() {
+              loader.style.display = 'none';
+            }, 500);
+          }
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
